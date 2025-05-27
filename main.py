@@ -22,6 +22,7 @@ def lower_text(list_string: list) -> list:
 def print_statistic() -> None:
     # Вывод на экран статистики
     max_k = max(map(len, statistic_file["files"].keys()))
+    max_k = 15 if max_k < 15 else max_k
     max_v = max(map(lambda x: len(str(x)), statistic_file["files"].values()))
     for k, v in statistic_file["files"].items():
         print(f'{k}{"":{"."}>{max_k - len(k) + 3}}{v}')
